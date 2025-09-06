@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Control Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fan Control Dashboard</h1>
+
+        <div class="data-display">
+            <div class="card">
+                <h2>CPU Temperature</h2>
+                <p id="cpuTemp">-- °C</p>
+            </div>
+            <div class="card">
+                <h2>GPU Temperature</h2>
+                <p id="gpuTemp">-- °C</p>
+            </div>
+            <div class="card">
+                <h2>Model Result</h2>
+                <p id="modelResult">--</p>
+            </div>
+            <div class="card">
+                <h2>Set Fan PWM</h2>
+                <p id="setFanPwm">-- %</p>
+            </div>
+            <div class="card">
+                <h2>Actual Fan PWM</h2>
+                <p id="actualFanPwm">-- %</p>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <h2>Fan Control</h2>
+            <div class="control-group">
+                <label for="controlMode">Control Mode:</label>
+                <select id="controlMode">
+                    <option value="auto">Automatic</option>
+                    <option value="manual">Manual</option>
+                </select>
+            </div>
+            <div class="control-group" id="manualPwmControl">
+                <label for="pwmSlider">Manual PWM:</label>
+                <input type="range" id="pwmSlider" min="0" max="100" value="50">
+                <span id="pwmValue">50%</span>
+            </div>
+            <button id="applyPwm">Apply PWM</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
